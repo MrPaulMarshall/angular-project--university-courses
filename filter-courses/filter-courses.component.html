@@ -1,0 +1,91 @@
+<app-page-header [full]="full()"></app-page-header>
+
+<div class="container">
+  <h1>Filtruj po wybranym kryterium</h1>
+  
+  <div class="md-form form-group">
+    <label for="inputCourseName">Nazwa kursu</label>
+    <input type="text" class="form-control" name="name" id="inputCourseName" placeholder="Nazwa kursu" [(ngModel)]="name">
+  </div>
+  
+  <div class="md-form form-group">
+    <label for="inputTeacher">Prowadzący</label>
+    <input type="text" class="form-control" name="teacher" id="inputTeacher" placeholder="Prowadzący" [(ngModel)]="teacher">
+  </div>
+
+  <div class="md-form form-group">
+    <label for="inputForm">Forma zajęć</label>
+    <input type="text" class="form-control" name="form" id="inputForm" placeholder="Forma zajęć" [(ngModel)]="form">
+  </div>
+
+  <div class="md-form form-group">
+    <label for="inputSemester">Semestr</label>
+    <input type="text" class="form-control" name="semester" id="inputSemester" placeholder="1, 2,3, 7" [(ngModel)]="semester">
+  </div>
+
+  <!-- Grid row -->
+  <div class="form-row">
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="inputMinECTS">Minimalne ECTS</label>
+        <input type="number" class="form-control" name="ECTS" id="inputMinECTS" placeholder="Minimalne ECTS" [(ngModel)]="minECTS">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="inputMaxECTS">Maksymalne ECTS</label>
+        <input type="number" class="form-control" name="ECTS" id="inputMaxECTS" placeholder="Maksymalne ECTS" [(ngModel)]="maxECTS">
+      </div>
+    </div>
+  </div>
+  <!-- Grid row -->
+  
+  <!-- Grid row -->
+  <div class="form-row">
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="inputMinMaxStudents">Dolny limit miejsc</label>
+        <input type="number" class="form-control" name="minMaxStudents" id="inputMinMaxStudents" placeholder="Dolny limit miejsc" [(ngModel)]="minMaxStudents">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="inputMaxMaxStudents">Górny limit miejsc</label>
+        <input type="number" class="form-control" name="maxMaxStudents" id="inputMaxMaxStudents" placeholder="Górny limit miejsc"[(ngModel)]="maxMaxStudents">
+      </div>
+    </div>
+  </div>
+  <!-- Grid row -->
+
+  <!-- Grid row -->
+  <div class="form-row">
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="inputMinRating">Ocena</label>
+        <input type="number" class="form-control" name="minCurrentRating" id="inputMinRating" placeholder="Minimalna ocena"[(ngModel)]="minCurrentRating">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="inputMaxRating">Ocena</label>
+        <input type="number" class="form-control" name="maxCurrentRating" id="inputMaxRating" placeholder="Maxksymalna ocena"[(ngModel)]="maxCurrentRating">
+      </div>
+    </div>
+  </div>
+  <!-- Grid row -->
+
+  
+
+  <!--<button mdbBtn color="primary" (click)="sendFilters()">Filtruj</button>-->
+  <a routerLink="/dashboard" routerLinkActive="active" class="btn btn-primary active" role="button" (click)="sendFilters()">Prześlij filtry</a>
+</div>
+

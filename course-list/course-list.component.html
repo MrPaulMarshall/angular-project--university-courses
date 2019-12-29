@@ -1,0 +1,26 @@
+<app-page-header [full]="full()"></app-page-header>
+
+<div class="container">
+    <div class="row">
+        <h1>LISTA KURSÓW</h1>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="getKursy().length > 0; else noCourses">
+            <!--<ng-container *ngFor="let course of (getKursy() | name ); let odd = odd; let index = index">-->
+            <ng-container *ngFor="let course of getKursy(); let odd = odd; let index = index">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card-column">
+                    <app-single-course [course]="course" [index]="index" [odd]="odd" [full]="full()" (usunEmitter)="deleteKurs($event)"></app-single-course>
+                </div>
+            </ng-container>
+        </ng-container>
+        <ng-template #noCourses>
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Ostrzeżenie</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Brak kursów</h5>
+                    <p class="card-text">Wróć później, gdy zostaną dodane jakieś kursy.</p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

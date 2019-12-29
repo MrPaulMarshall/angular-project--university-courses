@@ -1,0 +1,156 @@
+<div class="container">
+    <!-- Grid row -->
+    <div class="row">
+      <h1>{{course.name}}</h1>
+    </div>
+    <!-- Grid row -->
+
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-10">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="text" class="form-control" name="teacher" id="inputTeacher" placeholder="Prowadzący" required [(ngModel)]="teacher">
+          <label for="inputTeacher">Prowadzący</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeTeacher()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-10">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="text" class="form-control" name="form" id="inputForm" placeholder="Forma zajęć" required [(ngModel)]="form">
+          <label for="inputForm">Forma zajęć</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeForm()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="number" min="1" max="7" class="form-control" name="semester" id="inputSemester" placeholder="Semestr" required [(ngModel)]="semester">
+          <label for="inputSemester">Semestr</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeSemester()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="number" class="form-control" name="ECTS" id="inputECTS" placeholder="Punkty ECTS" required [(ngModel)]="ECTS">
+          <label for="inputECTS">Punkty ECTS</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+    
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeECTS()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="number" min="1" max="200" class="form-control" name="maxStudents" id="inputMaxStudents" placeholder="Limit miejsc" required [(ngModel)]="maxStudents">
+          <label for="inputMaxStudents">Limit miejsc</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeMaxStudents()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-10">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="text" class="form-control" name="imgURL" id="inputImgURL" placeholder="Adres URL obrazka" [(ngModel)]="imgURL">
+          <label for="inputImgURL">Adres URL obrazka</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeURL()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  
+    <!-- Grid row -->
+    <div class="row">
+        <div class="col-md-10">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input type="text" class="form-control" name="description" id="inputDescription" placeholder="Opis przedmiotu" [(ngModel)]="description">
+            <label for="inputDescription">Opis przedmiotu</label>
+          </div>
+        </div>
+
+        <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <button mdbBtn color="primary" (click)="changeDescription()">Zmień</button>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+    <div class="row">
+        <div class="col-12">
+            <button id="delete-button" type="button" class="btn btn-danger" (click)="deleteKurs(course)">Usuń</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <a id="go-back-link" routerLink="/dashboard" routerLinkActive="active" class="btn btn-primary active" role="button">Wróć</a>
+        </div>
+    </div>
+</div>

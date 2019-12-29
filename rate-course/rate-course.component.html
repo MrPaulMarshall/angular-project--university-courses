@@ -1,0 +1,39 @@
+<div class="outer-div">
+    <ng-container *ngFor="let elem of indexes">
+        <button class="inner-button" (click)="markStars(elem)">
+            <ng-container *ngIf="ifFull(elem); else unmarked">
+                <img src="../../assets/stars-images/full-star.png">
+            </ng-container>
+            <ng-template #unmarked>
+                <img src="../../assets/stars-images/empty-star.png">
+            </ng-template>
+        </button>
+    </ng-container>
+</div>
+<button class="btn btn-success" (click)="sendRate(markedStar)" id="submit-button">Oceń kurs</button>
+
+<!-- wersja dla ocenianie w karcie
+<div class="outer-div">
+    <ng-container *ngFor="let elem of indexes">
+        <button class="inner-button" (click)="markStars(elem)">
+            <ng-container *ngIf="odd; else blue">
+                <ng-container *ngIf="ifFull(elem); else unmarked">
+                    <img src="../../assets/stars-images/full-star-green.png">
+                </ng-container>
+                <ng-template #unmarked>
+                    <img src="../../assets/stars-images/empty-star-green.png">
+                </ng-template>
+            </ng-container>
+            <ng-template #blue>
+                <ng-container *ngIf="ifFull(elem); else unmarked">
+                    <img src="../../assets/stars-images/full-star-blue.png">
+                </ng-container>
+                <ng-template #unmarked>
+                    <img src="../../assets/stars-images/empty-star-blue.png">
+                </ng-template>
+            </ng-template>
+        </button>
+    </ng-container>
+</div>
+<button class="btn btn-light" (click)="sendRate(markedStar)" id="submit-button">Oceń kurs</button>
+-->

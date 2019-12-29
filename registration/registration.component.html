@@ -1,0 +1,56 @@
+
+<div class="container">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-12" id="header-div">
+            <h1>Zarejestruj się</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-7">
+            <form class="form-horizontal" action=''>
+                <fieldset id="fieldset-registration">
+                  <div class="control-group">
+                    <!-- E-mail -->
+                    <label class="control-label" for="email">E-mail</label>
+                    <div class="controls">
+                      <input type="text" id="email" name="email" placeholder="" class="input-xlarge" [(ngModel)]="email">
+                      <!--<p class="help-block">Please provide your E-mail</p>-->
+                    </div>
+                  </div>
+               
+                  <div class="control-group">
+                    <!-- Password-->
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                      <input type="password" id="password" name="password" placeholder="" class="input-xlarge" [(ngModel)]="password">
+                      <!--<p class="help-block">At least 4 characters</p>-->
+                    </div>
+                  </div>
+               
+                  <div class="control-group">
+                    <!-- Password -->
+                    <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                    <div class="controls">
+                      <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge" [(ngModel)]="repeatPassword">
+                      <!--<p class="help-block">Please confirm password</p>-->
+                    </div>
+                  </div>
+               
+                  <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                      <button class="btn btn-success" id="sign-up-btn" (click)="SignUpUser(email, password)">SIGN UP</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+        </div>
+        <div class="col-3">
+          <img id="cross-img" src="../../assets/other-images/1200px-German_Cross-transparent.svg.png" alt="Błąd zdjęcia">
+        </div>
+      </div>
+    </div>
+  </div>
+
+

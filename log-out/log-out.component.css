@@ -1,0 +1,22 @@
+
+#header-div {
+    padding-top: 20px;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#button-row {
+    text-align: center;
+    padding-top: 8%;
+    vertical-align: bottom;
+}
+
+#cross-img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}

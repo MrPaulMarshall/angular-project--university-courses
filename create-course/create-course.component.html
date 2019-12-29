@@ -1,0 +1,130 @@
+<app-page-header [full]="true"></app-page-header>
+
+<form>
+    <!-- Grid row -->
+    <div class="form-row">
+      <!-- Grid column -->
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputCourseName">Nazwa kursu</label>
+          <input type="text" class="form-control" name="name" id="inputCourseName" placeholder="Nazwa kursu" required [(ngModel)]="name">
+        </div>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputTeacher">Prowadzący</label>
+          <input type="text" class="form-control" name="teacher" id="inputTeacher" placeholder="Prowadzący" required [(ngModel)]="teacher">
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputForm">Forma zajęć</label>
+          <input type="text" class="form-control" name="form" id="inputForm" placeholder="Forma zajęć" required [(ngModel)]="form">
+        </div>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputSemester">Semestr</label>
+          <input type="number" min="1" max="7" class="form-control" name="semester" id="inputSemester" placeholder="Semestr" required [(ngModel)]="semester">
+        </div>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputECTS">Punkty ECTS</label>
+          <input type="number" class="form-control" name="ECTS" id="inputECTS" placeholder="Punkty ECTS" required [(ngModel)]="ECTS">
+        </div>
+      </div>
+      <!-- Grid column -->
+    
+      <!-- Grid column -->
+      <div class="col-md-2">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputMaxStudents">Limit miejsc</label>
+          <input type="number" min="1" max="200" class="form-control" name="maxStudents" id="inputMaxStudents" placeholder="Limit miejsc" required [(ngModel)]="maxStudents">
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <label for="inputImgURL">Adres URL obrazka</label>
+          <input type="text" class="form-control" name="imgURL" id="inputImgURL" placeholder="Adres URL obrazka" [(ngModel)]="imgURL">
+        </div>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  
+    <!-- Grid row -->
+    <div class="form-row">
+        <div class="col-md-12">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <label for="inputDescription">Opis przedmiotu</label>
+            <input type="text" class="form-control" name="description" id="inputDescription" placeholder="Opis przedmiotu" [(ngModel)]="description">
+          </div>
+        </div>
+    </div>
+    <!-- Grid row -->
+    <button mdbBtn color="primary" (click)="addCourse()">Stwórz kurs</button>
+</form>
+
+
+<!--
+
+<div id = "subgaleria2">
+    <button (click) = "rozwij()" id = "field_button" class = "collapsible">Dodaj nowy przedmiot</button>
+      <div class = "content" *ngIf = "addMenu">
+        <input [(ngModel)] = "newName" type="text" name="inputText" id="Text1" placeholder="Podaj nazwę"/>
+        <input [(ngModel)] = "newAdvisor" type="text" name="inputText" id="Text2" placeholder="Podaj prowadzącego"/>
+        <input [(ngModel)] = "newForm" type="text" name="inputText" id="Text1" placeholder="Podaj formę"/>
+        <input [(ngModel)] = "newECTS" type="text" name="inputText" id="Text2" placeholder="Podaj punkty ECTS"/>
+        <input [(ngModel)] = "newMax" type="text" name="inputText" id="Text2" placeholder="Maksimum studentów"/>
+        <input [(ngModel)] = "newDescr" type="text" name="inputText" id="Text1" placeholder="Podaj Opis"/>
+        <button (click)="addCourse()" id = "add_button">Dodaj</button>
+        <button (click)="powtorz()" id = "reset_button" >Reset</button>
+        <button (click) = "rozwij()" id = "close_button">Anuluj</button>
+      </div>
+  </div>
+
+  newName: string;
+  newAdvisor: string;
+  newECTS: number;
+  newForm: string;
+  newMax:number;
+  newnewGrade: number;
+  newDescr:string;
+  newGn:number;
+  newTotal:number;
+  addCourse()
+  {
+    this.courses.push(new Course(this.newName, this.newAdvisor,this.newECTS,this.newForm,this.newMax,0,this.newDescr,0,0));
+    this.addMenu = !this.addMenu;
+  }
+
+
+-->

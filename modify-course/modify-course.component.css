@@ -1,0 +1,24 @@
+h1 {
+    text-transform: uppercase;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.form-row {
+    padding: 0rem 4rem;
+}
+
+.row {
+    padding: 0rem 4rem;
+}
+
+#delete-button {
+    margin: 10px 12px;
+}
+
+#go-back-link {
+    margin: 10px 12px;
+}

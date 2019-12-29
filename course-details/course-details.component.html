@@ -1,0 +1,101 @@
+<div class="container">
+<div class="card border-primary mb-3">
+    <div class="card-header">
+        <h1>{{course.name}}</h1>
+    </div>
+    <div class="card-body text-primary">
+        <div><!--<div class="container">-->
+            <div class="row">
+                <div class="col-sm-6 col-lg-9">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                            <p>Prowadzący:</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-lg-9">
+                            <p>{{course.teacher}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                            <p>Semestr:</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-lg-9">
+                            <p>{{course.semester}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                            <p>Forma zajęć:</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-lg-9">
+                            <p>{{course.form}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                            <p>Punkty ECTS:</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-lg-9">
+                            <p>{{course.ECTS}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                            <p>Zapisani studenci:</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-lg-9">
+                            <p>{{course.signedUsers.length}}/{{course.maxStudents}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                            <p>Ocena kursu:</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-lg-9">
+                            <p style="font-weight:bold">{{getRating()}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-sm-6 col-lg-3">
+                    <img src="{{course.imgURL}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<ng-container *ngIf="whatAboutSigning() != 2">-->
+    <div class="card-footer bg-transparent border-primary">
+        <ng-container *ngIf="whatAboutSigning() == 1">
+            <p style="text-decoration: wavy;">Zaloguj się, aby móc zapisać się na kurs</p>
+        </ng-container>
+
+        <ng-container *ngIf="whatAboutSigning() == 2">
+            <ng-container *ngIf="ifRated(); else notRated">
+                <p>Już oceniłeś ten kurs</p>
+            </ng-container>
+        
+            <ng-template #notRated>
+                <app-rate-course [course]="course" (rated)="markRated($event)"></app-rate-course>
+            </ng-template>
+        </ng-container>
+
+        <ng-container *ngIf="whatAboutSigning() == 3">
+            <p>Nie możesz się zapisać - brak wolnych miejsc</p>
+        </ng-container>
+
+        <ng-container *ngIf="whatAboutSigning() == 4">
+            <button class="btn btn-primary" (click)="sign()">Zapisz się</button>
+        </ng-container>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p>{{course.description}}</p>
+        </div>
+    </div>
+    <a routerLink="/dashboard" routerLinkActive="active" class="btn btn-primary btn-lg active" role="button">Wróć</a>
+</div>

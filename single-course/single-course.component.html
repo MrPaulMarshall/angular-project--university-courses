@@ -1,0 +1,14 @@
+<div class="card text-white bg-primary" [ngClass]="{'bg-success': odd}">
+    <a routerLink="/course/{{index}}" routerLinkActive="active"><img class="card-img-top" src="{{getURL()}}" alt="Card image cap"></a>
+    
+    <div class="card-body">
+        <h5 class="card-title">{{course.name}}</h5>
+        <p>Ocena studentów: {{getRating()}}</p>
+    </div>
+
+    <ng-container *ngIf="full">
+        <a routerLink="/modify-course/{{index}}" routerLinkActive="active" class="btn btn-danger align-self-end">Modyfikuj kurs</a>
+    </ng-container>
+    <!--<button [hidden]="!signing.isAdmin()" type="button" class="btn btn-danger align-self-end" (click)="usunSubmit(course)">Usuń</button>-->
+</div>
+
