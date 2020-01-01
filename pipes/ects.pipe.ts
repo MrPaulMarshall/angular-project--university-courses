@@ -11,9 +11,19 @@ export class ECTSPipe implements PipeTransform {
   }
 
   transform(args: ICourse[]): any {
+    let minECTS = this.filterService.minECTS;
+    if (minECTS === undefined || minECTS === null) {
+      minECTS = -1000000;
+    }
+
+    let maxECTS = this.filterService.maxECTS;
+    if (maxECTS === undefined || maxECTS === null) {
+      maxECTS = 1000000;
+    }
+
     const newTab = new Array<ICourse>();
     for (const course of args) {
-      if (this.filterService.minECTS <= course.ECTS && course.ECTS <= this.filterService.maxECTS) {
+      if (minECTS <= course.ECTS && course.ECTS <= maxECTS) {
         newTab.push(course);
       }
     }

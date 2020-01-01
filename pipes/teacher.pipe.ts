@@ -11,9 +11,13 @@ export class TeacherPipe implements PipeTransform {
   }
 
   transform(args: ICourse[]): any {
+    if (this.filterService.teacher === undefined || this.filterService.teacher === null || this.filterService.teacher === '') {
+      return args;
+    }
+
     const newTab = new Array<ICourse>();
     for (const course of args) {
-      if (course.teacher.toLowerCase().includes( this.filterService.teacher )) {
+      if (course.teacher.toLowerCase().includes( this.filterService.teacher.toLowerCase() )) {
         newTab.push(course);
       }
     }

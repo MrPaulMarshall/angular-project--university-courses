@@ -11,10 +11,20 @@ export class CurrentRatingPipe implements PipeTransform {
   }
 
   transform(args: ICourse[]): any {
+    let minCurrentRating = this.filterService.minCurrentRating;
+    if (minCurrentRating === undefined || minCurrentRating === null) {
+      minCurrentRating = 0;
+    }
+
+    let maxCurrentRating = this.filterService.maxCurrentRating;
+    if (maxCurrentRating === undefined || maxCurrentRating === null) {
+      maxCurrentRating = 5;
+    }
+
     const newTab = new Array<ICourse>();
     for (const course of args) {
       const currRate = course.currentRating;
-      if (this.filterService.minCurrentRating <= currRate && currRate <= this.filterService.maxCurrentRating) {
+      if (minCurrentRating <= currRate && currRate <= maxCurrentRating) {
         newTab.push(course);
       }
     }

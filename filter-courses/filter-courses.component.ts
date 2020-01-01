@@ -12,7 +12,7 @@ export class FilterCoursesComponent implements OnInit {
   name: string;
   teacher: string;
   form: string;
-  semester: string;
+  semester: number;
   minECTS: number;
   maxECTS: number;
   minMaxStudents: number;
@@ -26,14 +26,14 @@ export class FilterCoursesComponent implements OnInit {
   }
 
   sendFilters() {
-    this.filterService.setFilters(this.name.toLowerCase(), this.teacher.toLowerCase(), this.form.toLowerCase(),
-      this.semester.replace(/[^0-9,]/g, ''), this.minECTS, this.maxECTS, this.minCurrentRating, this.maxCurrentRating,
+    this.filterService.setFilters(this.name, this.teacher, this.form,
+      this.semester, this.minECTS, this.maxECTS, this.minCurrentRating, this.maxCurrentRating,
       this.minMaxStudents, this.maxMaxStudents
     );
-    this.name = '';
-    this.teacher = '';
-    this.form = '';
-    this.semester = '';
+    this.name = null;
+    this.teacher = null;
+    this.form = null;
+    this.semester = null;
     this.minECTS = null;
     this.maxECTS = null;
     this.minCurrentRating = null;

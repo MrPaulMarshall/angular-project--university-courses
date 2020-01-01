@@ -9,11 +9,15 @@ export class SemesterPipe implements PipeTransform {
 
   constructor(private filterService: FiltrySerwisService) {
   }
-// DO ZROBIENIA
+
   transform(args: ICourse[]): any {
+    if (this.filterService.semester === undefined || this.filterService.semester === null) {
+      return args;
+    }
+
     const newTab = new Array<ICourse>();
     for (const course of args) {
-      if (this.filterService.semesters.includes(course.semester)) {
+      if (this.filterService.semester === course.semester) {
         newTab.push(course);
       }
     }

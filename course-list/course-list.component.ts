@@ -25,4 +25,7 @@ export class CourseListComponent implements OnInit {
     return this.kursySerwis.getKursy();
   }
 
+  indexOf(course: ICourse) {
+    return this.kursySerwis.indexOf(course);
+  }
 }

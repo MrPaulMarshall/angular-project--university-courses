@@ -12,9 +12,13 @@ export class NamePipe implements PipeTransform {
 
   // powinien zwrócić tablice kursów spełniających kryterium
   transform(args: Array<ICourse>): any {
+    if (this.filterService.name === undefined || this.filterService.name === null || this.filterService.name === '') {
+      return args;
+    }
+
     const newTab = new Array<ICourse>();
     for (const course of args) {
-      if (course.name.toLowerCase().includes( this.filterService.name )) {
+      if (course.name.toLowerCase().includes( this.filterService.name.toLowerCase() )) {
         newTab.push(course);
       }
     }

@@ -22,6 +22,10 @@ export class KursySerwisService {
     return this.courseList[i];
   }
 
+  indexOf(course: ICourse) {
+    return this.courseList.indexOf(course, 0);
+  }
+
   addKurs(course: ICourse) {
     this.courseList.push(course);
   }
@@ -51,5 +55,4 @@ export class KursySerwisService {
   }
 
   // funkcje do zmiany wartości pól:
-  
 }

@@ -7,9 +7,9 @@
     <div class="row">
         <ng-container *ngIf="getKursy().length > 0; else noCourses">
             <!--<ng-container *ngFor="let course of (getKursy() | name ); let odd = odd; let index = index">-->
-            <ng-container *ngFor="let course of getKursy(); let odd = odd; let index = index">
+            <ng-container *ngFor="let course of getKursy() | name | teacher | form | semester | ECTS | currentRating | maxStudents; let odd = odd; let index = index">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card-column">
-                    <app-single-course [course]="course" [index]="index" [odd]="odd" [full]="full()" (usunEmitter)="deleteKurs($event)"></app-single-course>
+                    <app-single-course [course]="course" [index]="indexOf(course)" [odd]="odd" [full]="full()" (usunEmitter)="deleteKurs($event)"></app-single-course>
                 </div>
             </ng-container>
         </ng-container>
